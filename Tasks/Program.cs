@@ -57,7 +57,7 @@ System.Console.WriteLine();
 
 System.Console.WriteLine("Введите двухзначное число");
 number = Convert.ToInt32(Console.ReadLine());
-while ((number < 10 && number > 99) || (number > -99 && number < -10))
+while (number > 99 || number < -99 || number > -10 && number < 10)
 {
     System.Console.WriteLine("Введите двухзначное число");
     number = Convert.ToInt32(Console.ReadLine());
@@ -79,5 +79,29 @@ if (result == 0)
 }
 else
 {
-System.Console.WriteLine($"Ответ: {result}");
+System.Console.WriteLine($"Максимальная цифра: {result}");
+}
+
+
+System.Console.WriteLine();
+
+
+/* ЗАДАЧА 4
+Напишите программу, которая на вход принимает натуральное число N,
+а на выходе показывает его цифры через запятую в обратном порядке.  */
+
+System.Console.WriteLine("Введите число");
+int N = Convert.ToInt32(Console.ReadLine());
+while (N > 0)
+{
+    if (N > 10)
+    {
+        System.Console.Write(N%10 + ", ");
+        N /= 10;
+    }
+    else
+    {
+        System.Console.Write(N%10);
+        N /= 10;
+    }
 }
